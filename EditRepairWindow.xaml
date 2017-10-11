@@ -1,0 +1,96 @@
+﻿<Window x:Class="ServiceCentreWPF.EditRepairWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceCentreWPF"
+        mc:Ignorable="d"
+        Title="Редактирование ремонта" Height="460" Width="1286" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Control.FontFamily" Value="Verdana" />
+            <Setter Property="Control.Background" Value="Orange" />
+            <Setter Property="Control.Foreground" Value="Blue" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Control.FontFamily" Value="Verdana" />
+            <Setter Property="Control.Background" Value="Aquamarine" />
+            <Setter Property="Control.Foreground" Value="Brown" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Control.FontFamily" Value="Verdana" />
+            <Setter Property="Control.Background" Value="Pink" />
+            <Setter Property="Control.Foreground" Value="Black" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="274*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label1EditRepair" Content="Номер:" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="50"/>
+        <TextBox x:Name="textBox_NumberEditRepair" Grid.Column="0" HorizontalAlignment="Right" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Margin="0,3,105,3"/>
+        <Label x:Name="label2EditRepair" Content="Дата:" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="181,2,0,1" Width="38"/>
+        <TextBox x:Name="textBox_DateEditRepair" Grid.Column="0" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Center" Width="137" Margin="221,3,0,3" Grid.ColumnSpan="2"/>
+        <Label x:Name="label3EditRepair" Content="Название Компании, если ЧЛ - ФИО" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,1,0,2" Width="211"/>
+        <ComboBox x:Name="comboBox_nameClientEditRepair" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="264" Margin="5,4,5,3" Height="22" SelectionChanged="comboBox_nameClientEditRepair_SelectionChanged"/>
+        <Label x:Name="label4EditRepair" Content="Контактное лицо:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,1,0,2" Width="211"/>
+        <TextBox x:Name="textBox_ContactEditRepair" Grid.Column="0" HorizontalAlignment="Center" Height="22" Margin="5,4" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Center" Width="264"/>
+        <Label x:Name="label5EditRepair" Content="Телефон:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,2,0,1" Width="211"/>
+        <TextBox x:Name="textBox_PhoneEditRepair" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" Height="24" Margin="5,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="264"/>
+        <Label x:Name="label6EditRepair" Content="Адрес:" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,1,0,2" Width="211"/>
+        <TextBox x:Name="textBox_AddressEditRepair" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Height="22" Margin="5,4" TextWrapping="Wrap" VerticalAlignment="Center" Width="264"/>
+        <Label x:Name="label7EditRepair" Content="E-mail:" Grid.Row="9" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,2,0,1" Width="211"/>
+        <TextBox x:Name="textBox_EmailEditRepair" Grid.Row="10" Grid.Column="0" HorizontalAlignment="Center" Height="24" Margin="5,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="264"/>
+        <Button x:Name="bt_AddClientEditRepair" Content="Добавить" Grid.Column="1" HorizontalAlignment="Center" Margin="3,0,3,4" Grid.Row="2" VerticalAlignment="Bottom" Width="75" Height="22" Click="bt_AddClientEditRepair_Click"/>
+        <Button x:Name="bt_EditClientEditRepair" Content="Изменить" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="3,4,3,0" VerticalAlignment="Top" Width="75" Height="22" Click="bt_EditClientEditRepair_Click"/>
+
+        <Label x:Name="label8EditRepair" Content="Категория изделия (Ноутбук, Планшет...):" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <ComboBox x:Name="comboBox_CategoriesEditRepair" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22" SelectionChanged="comboBox_CategoriesEditRepair_SelectionChanged"/>
+        <Label x:Name="label9EditRepair" Content="Бренд изделия (Samsung, Asus...):" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <ComboBox x:Name="comboBox_BrandsEditRepair" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22" SelectionChanged="comboBox_BrandsEditRepair_SelectionChanged"/>
+        <Label x:Name="label10EditRepair" Content="Модель изделия:" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <ComboBox x:Name="comboBox_ModelsEditRepair" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22"/>
+        <Label x:Name="label11EditRepair" Content="Серийный номер изделия:" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <TextBox x:Name="textBox_SNEditRepair" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22"/>
+        <Label x:Name="label12EditRepair" Content="Тип ремонта:" Grid.Row="9" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <ComboBox x:Name="comboBox_TypeRepairEditRepair" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22"/>
+        <Button x:Name="bt_NewCategoryEditRepair" Content="Новая" Grid.Column="3" HorizontalAlignment="Center" Margin="2,4,2,3" Grid.Row="2" VerticalAlignment="Center" Width="75" Height="22" Click="bt_NewCategoryEditRepair_Click"/>
+        <Button x:Name="bt_NewBrandEditRepair" Content="Новый" Grid.Column="3" HorizontalAlignment="Center" Margin="2,4,2,3" Grid.Row="4" VerticalAlignment="Center" Width="75" Height="22" Click="bt_NewBrandEditRepair_Click"/>
+        <Button x:Name="bt_NewModelEditRepair" Content="Новая" Grid.Column="3" HorizontalAlignment="Center" Margin="2,4,2,3" Grid.Row="6" VerticalAlignment="Center" Width="75" Height="22" Click="bt_NewModelEditRepair_Click"/>
+        <Label x:Name="label13EditRepair" Content="Дефект:" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <TextBox x:Name="textBox_DefectEditRepair" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" Height="52" Margin="0,3,0,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="264" Grid.RowSpan="2"/>
+        <Label x:Name="label14EditRepair" Content="Комплектность, состояние(Б/У, сколы...):" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <TextBox x:Name="textBox_kitViewEditRepair" Grid.Column="4" Grid.Row="5" HorizontalAlignment="Center" Height="110" Margin="0,3,0,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="264" Grid.RowSpan="4"/>
+        <Label x:Name="label15EditRepair" Content="Инженер:" Grid.Row="9" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <ComboBox x:Name="comboBox_EngineerEditRepair" Grid.Column="4" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22"/>
+        <Label x:Name="label16EditRepair" Content="Результат:" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <TextBox x:Name="textBox_ResultEditRepair" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Center" Height="52" Margin="0,3,0,3" TextWrapping="Wrap" VerticalAlignment="Center" Width="264" Grid.RowSpan="2"/>
+        <Label x:Name="label17EditRepair" Content="Цена:" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <TextBox x:Name="textBox_PriceEditRepair" Grid.Column="5" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" Width="60" Margin="5,3,5,3" Height="22"/>
+        <Label x:Name="label18EditRepair" Content="Состояние ремонта:" Grid.Row="9" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Margin="0,3,0,3" Width="264"/>
+        <ComboBox x:Name="comboBox_StatusRepairEditRepair" Grid.Column="5" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="264" Margin="5,3,5,3" Height="22"/>
+        <Button x:Name="bt_SaveRepairEditRepair" Content="Сохранить изменения" Grid.Column="0" HorizontalAlignment="Center" Grid.Row="12" VerticalAlignment="Center" Width="181" Grid.ColumnSpan="6" Click="bt_SaveRepairEditRepair_Click"/>
+
+    </Grid>
+</Window>

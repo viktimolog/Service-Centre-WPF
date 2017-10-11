@@ -1,0 +1,67 @@
+﻿<Window x:Class="ServiceCentreWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceCentreWPF"
+        mc:Ignorable="d"
+        Title="Сервисный центр: ВСЕСВИТ" Height="425" Width="1510" WindowState="Maximized" Loaded="Window_Loaded">
+    <Grid>
+        <Menu Height="23" VerticalAlignment="Top">
+            <MenuItem Header="Ремонты">
+                <MenuItem Header="Добавить ремонт" Click="MenuItem_Click_4" ></MenuItem>
+                <MenuItem Header="Редактировать ремонт" Click="MenuItem_Click_9"></MenuItem>
+             <!--   <MenuItem Header="Печать квитанции" Click="MenuItem_Click_15"></MenuItem>-->
+                <Separator/>
+                <MenuItem Header="Выход" Click="MenuItem_Click_16" ></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Поиск">
+                <MenuItem Header="По номеру ремонта" Click="MenuItem_Click_13" ></MenuItem>
+                <MenuItem Header="По серийному номеру" Click="MenuItem_Click_14"></MenuItem>
+                <MenuItem Header="По другим полям" Click="MenuItem_Click_10"></MenuItem>
+                <MenuItem Header="Показать все ремонты" Click="MenuItem_Click_11"></MenuItem>
+                <MenuItem Header="Только незавершенные" Click="MenuItem_Click_12"></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Заказчики">
+                <MenuItem Header="Добавить заказчика" Click="MenuItem_Click_2" ></MenuItem>
+                <MenuItem Header="Редактировать заказчика" Click="MenuItem_Click_7" ></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Бренды">
+                <MenuItem Header="Добавить бренд" Click="MenuItem_Click" ></MenuItem>
+                <MenuItem Header="Редактировать бренд" Click="MenuItem_Click_5" ></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Категории изделий">
+                <MenuItem Header="Добавить категорию" Click="MenuItem_Click_1" ></MenuItem>
+                <MenuItem Header="Редактировать категорию" Click="MenuItem_Click_6" ></MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Модели изделий">
+                <MenuItem Header="Добавить модель" Click="MenuItem_Click_3" ></MenuItem>
+                <MenuItem Header="Редактировать модель" Click="MenuItem_Click_8" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="dataGridView1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" AutoGenerateColumns="False"  FrozenColumnCount="3" Margin="0,21,0,0" MouseLeftButtonDown="dataGridView1_MouseLeftButtonDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding IdRepair}" />
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="Клиент" Binding="{Binding NameClient}" />
+                <DataGridTextColumn Header="Контакт" Binding="{Binding Contact}" />
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" />
+                <DataGridTextColumn Header="Изделие" Binding="{Binding Device}" />
+                <DataGridTextColumn Header="Серийный номер" Binding="{Binding SN}" />
+                <DataGridTextColumn Header="Тип ремонта" Binding="{Binding TypeRepair}" />
+                <DataGridTextColumn Header="Дефект" Binding="{Binding Defect}" />
+                <DataGridTextColumn Header="Комплектность" Binding="{Binding KitView}" />
+                <DataGridTextColumn Header="Инженер" Binding="{Binding Engineer}" />
+                <DataGridTextColumn Header="Результат" Binding="{Binding Result}" />
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
